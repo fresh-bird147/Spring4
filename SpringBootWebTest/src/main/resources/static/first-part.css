@@ -1,0 +1,316 @@
+* {
+  box-sizing: border-box;
+}
+
+#web_bg {
+  font-family: Arial;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 1000px;
+  z-index: -10;
+  zoom: 1;
+  /* 解决ie下比较奇葩的bug。譬如外边距（margin）的重叠，譬如浮动的清除，譬如触发ie的 haslayout属性 */
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-position: center 0;
+  width: 100%;
+
+}
+
+.header1 {
+  padding: 30px;
+  text-align: center;
+  z-index: 1;
+}
+
+.header2 {
+  margin: 0 150px;
+  padding: 30px;
+  text-align: center;
+  background-image: url(picture/backlogo.png);
+  background-repeat: no-repeat;
+  z-index: 2;
+  height: 140px;
+}
+
+.header2 h1 {
+  font-size: 50px;
+  opacity: 0;
+}
+
+.logo {
+  width: 90px;
+  right: 50px;
+  position: fixed;
+  top: 150px;
+  -webkit-animation: pulse 2s linear infinite;
+  animation: pulse 2s linear infinite;
+  z-index: 100;
+  animation: shimmy 3s infinite;
+  animation-direction: alternate;
+  cursor: pointer;
+}
+
+@keyframes shimmy {
+  0% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  100% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+}
+
+.navtop {
+
+  padding: 40px 50px 0;
+  margin: 0 0 0 380px;
+}
+
+.header_links a {
+  float: left;
+  display: block;
+  text-decoration: none;
+  color: #f2f2f2;
+  padding: 14px 16px;
+  text-align: center;
+  border-radius: 25px;
+  font-size: 20px;
+}
+
+.header_links {
+  display: flew;
+  font-weight: 700;
+  right: 0;
+  line-height: 30px;
+  color: white;
+}
+
+li {
+  list-style: none;
+}
+
+.link {
+  float: left;
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: inline-block;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+
+  padding: 14px 16px;
+  opacity: .9;
+  border-radius: 7px;
+  cursor: pointer;
+  position: relative;
+  font-size: 20px;
+}
+
+.submemu {
+  opacity: 1;
+  position: absolute;
+  top: 40px;
+  display: none;
+  right: 72px;
+  border-radius: 7px;
+  width: 108px;
+  height: 98px;
+
+}
+
+.submemu a {
+  width: 120px;
+  padding: 0 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.link:hover .submemu {
+  display: block;
+  color: black;
+}
+
+.link:hover {
+
+  color: black;
+}
+
+.arrow {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url(picture/xia.png);
+  background-size: cover;
+  margin-left: 2px;
+  cursor: default;
+}
+
+#current {
+  background-color: #f1f1f1;
+  color: black;
+  background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+}
+
+.navtop a:hover {
+
+  color: black;
+}
+
+.content {
+  margin: 0 260px;
+  position: relative;
+  padding: 10px;
+  width: 1093px;
+  height: 586px;
+  position: relative;
+}
+
+.white {
+  position: absolute;
+  top: 0;
+  left: 212px;
+  background: url(picture/white.77f4e6b3ad.png);
+  background-size: cover;
+  width: 113px;
+  height: 80px;
+  z-index: 10;
+}
+
+.yellow {
+  position: absolute;
+  left: 0;
+  top: 412px;
+  background: url(picture/yellow.a40f52a717.png);
+  background-size: cover;
+  width: 165px;
+  height: 163px;
+  z-index: 10;
+}
+
+.pink {
+  position: absolute;
+  top: 496px;
+  left: 358px;
+  background: url(picture/pink.png);
+  background-size: cover;
+  width: 82px;
+  height: 90px;
+  z-index: 10;
+}
+
+.phone {
+  position: absolute;
+  top: 75px;
+  left: 141px;
+  background: url(picture/phone.a6863d9440.png);
+  background-size: cover;
+  width: 255px;
+  height: 508px;
+}
+
+.zuiyouapp {
+  position: absolute;
+  top: 145px;
+  left: 514px;
+  background: url(picture/zuiyou.515b87ef93.png);
+  background-size: cover;
+  width: 573px;
+  height: 48px;
+}
+
+/* 设置 h1 和 h2 元素的字母间距： */
+.desc {
+  position: absolute;
+  top: 268px;
+  left: 515px;
+  font-size: 18px;
+  line-height: 29px;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.qrcode {
+  position: absolute;
+  top: 366px;
+  left: 558px;
+  background: url(picture/pure_qrcode.437b789373.png);
+  background-size: cover;
+  width: 180px;
+  height: 145px;
+}
+
+.video {
+  width: 222px;
+  height: 479px;
+  position: absolute;
+  z-index: 1;
+  left: 158px;
+  top: 89px;
+  border-radius: 21px;
+  background-size: cover;
+}
+
+video {
+  object-fit: contain;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.photo {
+  background-color: #aaaaaa;
+  width: 100%;
+  padding: 20px;
+}
+
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+/* 响应式布局 - 屏幕尺寸小于 800px 时，两列布局改为上下布局 */
+@media screen and (max-width: 800px) {
+
+  .leftcolumn,
+  .rightcolumn {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* 响应式布局 -屏幕尺寸小于 400px 时，导航等布局改为上下布局 */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }

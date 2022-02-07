@@ -1,0 +1,282 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-11-07 20:23:41
+ * @LastEditTime: 2020-11-21 16:37:04
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \最右pc端\zuiyou
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>段子专区</title>
+    <link rel="stylesheet" href="second-part.css" type="text/css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    
+    <script>
+        setInterval("timenow.innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);
+    </script>
+    <script>
+        $(document).ready(function(){
+	$("#first").click(function(){
+		$("#hidden").slideToggle();
+	});
+});
+    </script>
+    <script src="./jquery.min.js"></script>
+    <script type="text/javascript">
+     
+     $(function(){ 
+        $(".pic").click(function(){ 
+          var _this = $(this);//将当前的pimg元素作为_this传入函数 
+          imgShow("#outerdiv", "#innerdiv", "#bigimg", _this); 
+        }); 
+      }); 
+      function imgShow(outerdiv, innerdiv, bigimg, _this){ 
+        var src = _this.attr("src");//获取当前点击的pimg元素中的src属性 
+        $(bigimg).attr("src", src);//设置#bigimg元素的src属性 
+          /*获取当前点击图片的真实大小，并显示弹出层及大图*/ 
+        $("<img/>").attr("src", src).load(function(){ 
+          var windowW = $(window).width();//获取当前窗口宽度 
+          var windowH = $(window).height();//获取当前窗口高度 
+          var realWidth = this.width;//获取图片真实宽度 
+          var realHeight = this.height;//获取图片真实高度 
+          var imgWidth, imgHeight; 
+          var scale = 0.8;//缩放尺寸，当图片真实宽度和高度大于窗口宽度和高度时进行缩放 
+          if(realHeight>windowH*scale) {//判断图片高度 
+            imgHeight = windowH*scale;//如大于窗口高度，图片高度进行缩放 
+            imgWidth = imgHeight/realHeight*realWidth;//等比例缩放宽度 
+            if(imgWidth>windowW*scale) {//如宽度扔大于窗口宽度 
+              imgWidth = windowW*scale;//再对宽度进行缩放 
+            } 
+          } else if(realWidth>windowW*scale) {//如图片高度合适，判断图片宽度 
+            imgWidth = windowW*scale;//如大于窗口宽度，图片宽度进行缩放 
+                  imgHeight = imgWidth/realWidth*realHeight;//等比例缩放高度 
+          } else {//如果图片真实高度和宽度都符合要求，高宽不变 
+            imgWidth = realWidth; 
+            imgHeight = realHeight; 
+          } 
+              $(bigimg).css("width",imgWidth);//以最终的宽度对图片缩放 
+          var w = (windowW-imgWidth)/2;//计算图片与窗口左边距 
+          var h = (windowH-imgHeight)/2;//计算图片与窗口上边距 
+          $(innerdiv).css({"top":h, "left":w});//设置#innerdiv的top和left属性 
+          $(outerdiv).fadeIn("fast");//淡入显示#outerdiv及.pimg 
+        }); 
+        $(outerdiv).click(function(){//再次点击淡出消失弹出层 
+          $(this).fadeOut("fast"); 
+        }); 
+      }
+     
+    </script>
+</head>
+<body id="id">
+     
+    <div class="header1">
+        <div class="header2">
+            <div id="timenow" ></div>
+          
+            <a href="#id"><img src="picture/hi-dog-lit.gif" alt="pink" class="logo"></a>
+         </div>
+         <div class="navtop">
+            <ul class="header_links">
+                <a href="first" >首页</a>
+                <a href="video" >视频专区</a>
+                <a href="second" id="current">段子专区</a>
+                <a href="fly">纸飞机</a>
+                <li class="link">           
+                    关于最右
+                    <div class="arrow"></div>
+                    <ul class="submemu">    
+                        <a target="_blank" href="https://h5.izuiyou.com/introduction"><li>最右介绍</li></a>
+                        <a target="_blank" href="https://h5.izuiyou.com/about"><li>关于最右</li></a>
+                    </ul>
+                </li>
+               
+            </ul>
+        </div>
+    </div>
+
+    
+
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="card">
+                <div class="user">
+                    <img src="picture/3d49b5c56d924a2c0b5f13b50765f8d7.jpg" alt="" >
+                    <div class="user_right">
+                        <h3>糊SAMA</h3>
+                       <br>
+                        <p>店家：瞧把孩子馋的 给你加满.</p>
+                     </div>
+                    
+                </div>
+                <div class="photoshow">
+                    <img src="picture/QQ图片20201120235728.jpg" alt="" class="pic">
+                    <img src="picture/QQ图片20201120235725.jpg" alt="" class="pic">
+                    <img src="picture/QQ图片20201120235722.jpg" alt="" class="pic">
+                    <img src="picture/QQ图片20201120235718.jpg" alt="" class="pic">
+                </div>
+                <div class="hot">
+                    <img src="picture/下载.png" alt="" style="width: 50px;">
+                    <br>
+                    <br>
+                    <p>不一样的守门员.</p>
+                </div>
+            </div>
+            <div class="card">
+                
+                <div class="user">
+                    <img src="picture/f70ae624ad4bea8abb085e3bf29cc279.gif" alt="" >
+                    <div class="user_right">
+                        <h3>Bilionaire</h3>
+                      
+                        <p>桥上有人晒被子，被子掉了，飘到湖中央了哈哈哈哈哈哈</p>
+                     </div>
+                </div>
+                <div class="photoshow">
+                    <img src="picture/1343444499.jpeg" alt="" class="pic">
+                    <img src="picture/1343444500.jpeg" alt="" class="pic">
+                    <img src="picture/1343444501.jpeg" alt="" class="pic">
+                    
+                </div>
+                      <div class="hot">
+                        <img src="picture/下载.png" alt="" style="width: 50px;">
+                        <br>
+                        <br>
+                        <p>让你盖了大半年，我游个泳享受享受都不行吗</p>
+                    </div>
+               
+            </div>
+            <div class="card">
+                <div class="user">
+                    <img src="picture/03caa5b38ca32a53442950c34dd53a34.jpg" alt="" >
+                    <div class="user_right">
+                        <h3>码小渣</h3>
+                       <br>
+                        <p>高中生是住宿还是走读好？</p>
+                     </div>
+                </div>
+                <div class="photoshow">
+                    <img src="picture/1344190505.jpeg" alt="" class="pic">
+                   
+                </div>
+                  <div class="hot">
+                    <img src="picture/下载.png" alt="" style="width: 50px;">
+                    <br>
+                    <br>
+                    <p>走读，休息不好一切白扯</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="user">
+                    <img src="picture/4c1c84e5edd1f4db3eaf31bf055b2a71.jpeg" alt="" >
+                    <div class="user_right">
+                        <h3>DCcose</h3>
+                       <br>
+                        <p>最右介绍</p>
+                     </div>
+                </div>
+               <div class="fontsh">
+                最右是2016年的青少年兴趣社交类明星产品。最右面向青少年，以发现兴趣、传递快乐为己任。从创立伊始，最右就以其不走寻常路的鲜明风格，不断获得各大市场推荐，获得百度金熊掌奖、腾讯最佳应用等各大奖项。 在最右，你可以不停刷出最精彩的新热内容，关注自己感兴趣的话题，与脑洞大开的右友互动，找到自己的同爱同好。最右会通过机器的自动学习，分析用户的兴趣爱好，基于大数据的个性化推荐引擎，帮助你找到喜欢的内容和人。你用的越多，最右就会越懂你。搞笑内容是最右的一大特色，老司机和单身狗都在此地聚集。此外，最右里还充满了温情和鼓励，爱情和勇气，喷子没有市场，地域不是歧视，尽管污但很优雅，右友们的三观比五官还正。目前数千万初高中生和大学生用户都选择了最右，他们在最右分享他们的生活和兴趣，最右已经成为他们生活的一部分，也将成为更多年轻人的生活方式。最右是一款有人情味和死忠粉的产品，正在在年轻人中迅速窜红。 最右大事件
+               </div>
+
+                  <div class="hot">
+                    <img src="picture/下载.png" alt="" style="width: 50px;">
+                    <br>
+                   
+                    <p>超喜欢最右</p>
+                    <img src="picture/QQ图片20201120235732.jpg" alt="" class="pic" style="width: 50px;">
+                </div>
+            </div>
+          
+            <div class="card">
+                <div class="user">
+                    <img src="picture/d6856b86fff21cb7fadc116477c3f37e.gif" alt="" >
+                    <div class="user_right">
+                        <h3>哈萨克的迷宫</h3>
+                       <br>
+                       
+                     </div>
+                </div>
+                <div class="fontsh">
+                    “报告长官，前方发现一颗蔚蓝色星球，宇宙等级0.97级，是一个刚步入核武器时期的行星！”一头四眼，满脸褶皱，口中有口两排牙齿，还有两根，漆黑色的水管，从后背绕至胸前，插入口中的家伙说道。
+　　一个一头六眼双手负后，缓缓扭过头去道：“就一个核武时期的星球？上方资源如何？”
+　　“禀报长官，就一个核武时期的星球，据仪器检测，上方资源丰富，并且还有我们需要的低等生命体，况且此处距离宇宙核心1080.1亿光年，就算我们做了，宇宙核心那边也接收不了消息！”
+
+                   </div>
+                  <div class="hot">
+                    <img src="picture/下载.png" alt="" style="width: 50px;">
+                    <br>
+                    
+                    <p>正当四眼率领队伍刚刚进入大气层的时候     一道洪亮的声音从空中抓起:“王有胜    去给他们两耳光   让他们涨涨记性”</p>
+                    <img src="picture/QQ图片20201121103533.jpg" alt="" class="pic" style="width: 50px;">
+                </div>
+            </div>
+            <div class="card">
+                <div class="user">
+                    <img src="picture/QQ图片20201120235711.jpg" alt="" >
+                    <div class="user_right">
+                        <h3>徐某大侠</h3>
+                       <br>
+                        <p>这个罗翔教授是谁？</p>
+                     </div>
+                </div>
+                <div class="photoshow">
+                    <img src="picture/QQ图片20201121103925.jpg" alt="" class="pic">
+                    <img src="picture/QQ图片20201121103932.jpg" alt="" class="pic">
+                   
+                </div>
+                  <div class="hot">
+                    <img src="picture/下载.png" alt="" style="width: 50px;">
+                    <br>
+                   
+                    <p>听我的，你先换个电视</p>
+                    <img src="picture/QQ图片20201121103936.jpg" alt="" class="pic" style="width: 50px;">
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="rightcolumn">
+            <div class="card">
+                <h1>一只大龙猫</h1>
+                <div class=photo>
+                    <img src="picture/1f65471049d4233bd1e78f5de8d49458.jpeg" class="longmao" alt="" style="width: 100%;">
+                    
+                </div> 
+
+            </div>
+            <div class="card">
+                <h1>柚子排行榜</h1>
+                <div class="photo1"> </div>
+                <div id="hidden"><div class="photo2"> </div></div>
+        
+                <button type="button" id="first"></button>
+                
+                
+                
+                
+            </div>
+           
+
+        </div>
+    
+      
+    </div>
+    <div class="footer">
+        
+           <div class="infooter"> <h2>快乐就是这么简单！</h2></div>
+        
+        
+      </div>
+      <div id="outerdiv" style="position:fixed;top:0;left:0;background:rgba(0,0,0,0.7);z-index:2;width:100%;height:100%;display:none;">
+ 	
+        <div id="innerdiv" style="position:absolute;">
+          <img id="bigimg" style="border:5px solid #fff;" src="" />
+        </div>
+</body>
+</html>
